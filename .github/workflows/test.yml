@@ -16,13 +16,14 @@ jobs:
 
     steps:
       - name: echo test
-        run: echo `pull request target test`
+        run: echo 'pull request target test'
 
-      - uses: actions/checkout@v2
-      - name: Set up JDK 11
-        uses: actions/setup-java@v1
+      - uses: actions/checkout@v4
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
         with:
-          java-version: '11'
+          distribution: 'corretto'
+          java-version: '17'
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
