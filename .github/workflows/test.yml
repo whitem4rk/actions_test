@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - name: echo test
-        run: echo 'pull request target test'
+        run: echo 'pull request target test again'
 
       - uses: actions/checkout@v4
       - name: Set up JDK 17
