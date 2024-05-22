@@ -7,7 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class GithubActionsApplication {
 
   public static void main(String[] args) {
-    System.out.println("hello");
+    // trigger error
+    System.out.p;
     SpringApplication.run(GithubActionsApplication.class, args);
   }
 
