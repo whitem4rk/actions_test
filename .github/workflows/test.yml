@@ -1,0 +1,32 @@
+name: Gradle Build
+
+on:
+  pull_request_target:
+    types: [ opened, reopened, synchronize ]
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: build_gradle
+
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: echo test
+        run: echo 'pull request target test'
+
+      - uses: actions/checkout@v4
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'corretto'
+          java-version: '17'
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Build with Gradle
+        run: ./gradlew clean build
