@@ -1,4 +1,4 @@
-name: Gradle Build
+name: PR_TARGET Gradle Build
 
 on:
   pull_request_target:
