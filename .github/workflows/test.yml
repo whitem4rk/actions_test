@@ -16,9 +16,13 @@ jobs:
 
     steps:
       - name: echo test
-        run: echo 'pull request target test'
+        run: echo 'pull request target test again'
 
-      - uses: actions/checkout@v4
+      - name: checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
