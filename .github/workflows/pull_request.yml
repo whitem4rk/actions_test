@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: build_gradle
+    environment: test
 
     permissions:
       contents: read
@@ -30,3 +30,5 @@ jobs:
 
       - name: Build with Gradle
         run: ./gradlew clean build
+        env:
+          SECRET_TEST: ${{ secrets.SECRET_TEST }}
