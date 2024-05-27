@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: build_gradle
+    environment: test
 
     permissions:
       contents: read
@@ -16,7 +16,10 @@ jobs:
 
     steps:
       - name: echo test
-        run: echo 'pull request target test again'
+        run: echo ${{ secrets.SECRET_TEST }}
+
+      - name: echo CHNAGED
+        run: echo ${{ secrets.SECRET_TEST }}
 
       - name: checkout code
         uses: actions/checkout@v4
