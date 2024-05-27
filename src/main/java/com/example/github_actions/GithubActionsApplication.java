@@ -8,7 +8,7 @@ public class GithubActionsApplication {
 
   public static void main(String[] args) {
     // trigger error
-    System.out.println("ROLL BACK");
+    System.out.println("TEST");
 
     SpringApplication.run(GithubActionsApplication.class, args);
   }
